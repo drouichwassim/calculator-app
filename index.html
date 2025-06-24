@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CALCULATOR</h1>
+    <div class="table">
+    <input class="label" id="resultlabel" readonly>
+    
+    <button onclick="displayinput('0')" value="0">0</button>
+    <button onclick="displayinput('1')" value="1">1</button>
+    <button onclick="displayinput('2')" value="2">2</button>
+    <button onclick="displayinput('3')" value="3">3</button>
+    <button onclick="displayinput('4')" value="4">4</button>
+    <button onclick="displayinput('5')" value="5">5</button>
+    <button onclick="displayinput('6')" value="6">6</button>
+    <button onclick="displayinput('7')" value="7">7</button>
+    <button onclick="displayinput('8')" value="8">8</button>
+    <button onclick="displayinput('9')" value="9">9</button>
+    <button onclick="displayinput('.')" value=".">.</button>
+    <button onclick="displayinput('+')" value="+">+</button>
+    <button onclick="displayinput('-')" value="-">-</button>
+    <button onclick="displayinput('*')" value="*">x</button>
+    <button onclick="calculate()" value="=">=</button>
+    <button onclick="clearinput()" value="AC">AC</button>
+    </div>
+    <script>
+        const display = document.getElementById("resultlabel");
+
+        function displayinput(input){
+             display.value += input;
+        }
+        function calculate(){
+            try{
+           display.value= eval(display.value);
+            }
+           catch(error){
+             display.value = "error"
+           };
+           
+        }
+        function clearinput(){
+            display.value="";
+        }
+    </script>
+</body>
+</html>
